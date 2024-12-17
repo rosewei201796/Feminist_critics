@@ -173,7 +173,7 @@ function ChatBox() {
         ))}
         {isLoading && (
           <div className="message response-message">
-            <div className="message-content">正在思考中...</div>
+            <div className="message-content">你等着...🙃</div>
           </div>
         )}
       </div>
