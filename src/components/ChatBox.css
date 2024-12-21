@@ -1,3 +1,13 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-image: url('/images/background.png');  /* 使用相对于public文件夹的路径 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 .chat-container {
   width: 400px;
   height: 600px;
@@ -55,19 +65,43 @@
 
 .send-button {
   padding: 10px 20px;
-  background-color: #007bff;
+  background: linear-gradient(
+    90deg,
+    #ba2b2b,    
+    hsl(160, 73%, 25%),    
+    #990b38     
+  );
+  background-size: 200% 100%;
+  animation: gradientMove 3s linear infinite;
   color: white;
+  text-shadow: 
+    0 0 5px #ff0f7b,
+    0 0 10px rgba(255, 15, 123, 0.5);
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
 }
 
 .send-button:hover {
-  background-color: #0056b3;
+  transform: scale(1.05);
+  filter: brightness(1.2);
+  cursor: pointer;
+  box-shadow: 
+    0 0 10px rgba(255, 15, 123, 0.5),
+    0 0 20px rgba(0, 255, 159, 0.3);
 }
 
 .send-button:disabled {
-  background-color: #cccccc;
+  background: #cccccc;
+  animation: none;
   cursor: not-allowed;
 }
 
