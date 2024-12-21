@@ -183,7 +183,7 @@ function ChatBox() {
           type="text"
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
-          placeholder="请输入消息..."
+          placeholder="来啊"
           className="chat-input"
           disabled={isLoading}
         />
@@ -192,7 +192,7 @@ function ChatBox() {
           className="send-button"
           disabled={isLoading}
         >
-          {isLoading ? '发送中...' : '发送'}
+          {isLoading ? 'sending...' : 'send'}
         </button>
       </form>
     </div>
